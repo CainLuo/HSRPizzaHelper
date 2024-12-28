@@ -75,8 +75,6 @@
 		BFB54CF62AD0E3C400EAEE85 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BFB54CF22AD0E3C400EAEE85 /* Localizable.xcstrings */; };
 		BFB54CF82AD0E3CE00EAEE85 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BFB54CF72AD0E3CD00EAEE85 /* InfoPlist.xcstrings */; };
 		BFB54CF92AD0E3CE00EAEE85 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BFB54CF72AD0E3CD00EAEE85 /* InfoPlist.xcstrings */; };
-		BFBA361A2A17496D00E0142A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA36192A17496D00E0142A /* StoreManager.swift */; };
-		BFBA361C2A1749AE00E0142A /* GlobalDonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA361B2A1749AE00E0142A /* GlobalDonateView.swift */; };
 		BFBF6DD02A18C4A7009C684B /* ContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF6DCF2A18C4A7009C684B /* ContactInfoView.swift */; };
 		BFBF6DD82A1B35FA009C684B /* HSRPizzaHelperWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BFBF6DDC2A1B35FA009C684B /* HSRPizzaHelperWidget.intentdefinition */; };
 		BFBF6DD92A1B35FA009C684B /* HSRPizzaHelperWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BFBF6DDC2A1B35FA009C684B /* HSRPizzaHelperWidget.intentdefinition */; };
@@ -246,7 +244,6 @@
 		EAB809262BD792C400FEC5FF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EAB809232BD792C400FEC5FF /* PrivacyInfo.xcprivacy */; };
 		EAB809272BD792C400FEC5FF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EAB809232BD792C400FEC5FF /* PrivacyInfo.xcprivacy */; };
 		EABA18082A87A908005A639E /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = EABA18072A87A908005A639E /* Collections */; };
-		EAC3243D2A1F584D007075D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC3243C2A1F584D007075D7 /* StoreKit.framework */; };
 		EAC9E4112A09F36E00011E1F /* WidgetTimelineReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC9E4102A09F36E00011E1F /* WidgetTimelineReloader.swift */; };
 		EAC9E4152A09F72600011E1F /* WidgetSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC9E4142A09F72600011E1F /* WidgetSettingView.swift */; };
 		EAD3C0972A081E43007B51AE /* WidgetAccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3C0962A081E43007B51AE /* WidgetAccountCard.swift */; };
@@ -399,8 +396,6 @@
 		BFA4A84A2A0BD0AA00239BB0 /* ImageCroper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCroper.swift; sourceTree = "<group>"; };
 		BFB54CF22AD0E3C400EAEE85 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BFB54CF72AD0E3CD00EAEE85 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		BFBA36192A17496D00E0142A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		BFBA361B2A1749AE00E0142A /* GlobalDonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDonateView.swift; sourceTree = "<group>"; };
 		BFBF6DCF2A18C4A7009C684B /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
 		BFBF6DDB2A1B35FA009C684B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/HSRPizzaHelperWidget.intentdefinition; sourceTree = "<group>"; };
 		BFBF6DDE2A1B3600009C684B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HSRPizzaHelperWidget.strings; sourceTree = "<group>"; };
@@ -511,7 +506,6 @@
 		EA9E221C2A0BA48B002F3351 /* SmallSquareDailyNoteWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSquareDailyNoteWidgetView.swift; sourceTree = "<group>"; };
 		EAAD1AE72A04CE37002BDA86 /* DailyNoteCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNoteCards.swift; sourceTree = "<group>"; };
 		EAB809232BD792C400FEC5FF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = SOURCE_ROOT; };
-		EAC3243C2A1F584D007075D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EAC9E4102A09F36E00011E1F /* WidgetTimelineReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineReloader.swift; sourceTree = "<group>"; };
 		EAC9E4142A09F72600011E1F /* WidgetSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSettingView.swift; sourceTree = "<group>"; };
 		EAD3C0962A081E43007B51AE /* WidgetAccountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAccountCard.swift; sourceTree = "<group>"; };
@@ -579,7 +573,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAC3243D2A1F584D007075D7 /* StoreKit.framework in Frameworks */,
 				BFDF6A802A08C32200048FF9 /* HBPizzaHelperAPI in Frameworks */,
 				EABA18082A87A908005A639E /* Collections in Frameworks */,
 				EA4DAC112A0BB1AD00D2AC5F /* Algorithms in Frameworks */,
@@ -738,7 +731,6 @@
 		EA143BC62A01808200AE1FCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EAC3243C2A1F584D007075D7 /* StoreKit.framework */,
 				EA8A77312A074BB30005C511 /* CloudKit.framework */,
 				EA1673F02A063AF300436487 /* WidgetKit.framework */,
 				EA1673F22A063AF300436487 /* SwiftUI.framework */,
@@ -760,7 +752,6 @@
 			children = (
 				EA60BE5B2A05053200CBF10B /* AboutView.swift */,
 				EA60BE5C2A05053200CBF10B /* ThanksView.swift */,
-				BFBA361B2A1749AE00E0142A /* GlobalDonateView.swift */,
 				BFBF6DCF2A18C4A7009C684B /* ContactInfoView.swift */,
 			);
 			path = View;
@@ -1227,7 +1218,6 @@
 				BF06C4A72A04FD1F00EE9120 /* ReviewHandler.swift */,
 				BFDF6A852A08D6C000048FF9 /* TapticSupport.swift */,
 				BFDF6A872A08D84200048FF9 /* DeviceRecognizer.swift */,
-				BFBA36192A17496D00E0142A /* StoreManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1724,7 +1714,6 @@
 				EA8D28802A8601B600B47869 /* AccountGachaView.swift in Sources */,
 				BFDF6A882A08D84200048FF9 /* DeviceRecognizer.swift in Sources */,
 				EA3BDCA02A83A98A001C3C6C /* GachaItemMO+CoreDataClass.swift in Sources */,
-				BFBA361A2A17496D00E0142A /* StoreManager.swift in Sources */,
 				5B11A26A2C01FE9A006B0BF9 /* CGImageImpl.swift in Sources */,
 				EA80CFE32A0E8FFF00002B53 /* HSRNotificationCenter.swift in Sources */,
 				BF06C4A82A04FD1F00EE9120 /* ReviewHandler.swift in Sources */,
@@ -1746,7 +1735,6 @@
 				EA09B1972A0918B200986D46 /* UserPolicyChecker.swift in Sources */,
 				5B4327742CC7B8F00021D5CF /* MigrationView.swift in Sources */,
 				EA47FE812A85E12300344A8A /* GachaItemExtension.swift in Sources */,
-				BFBA361C2A1749AE00E0142A /* GlobalDonateView.swift in Sources */,
 				EA80CFE82A0E983C00002B53 /* InlineNavigationTitle.swift in Sources */,
 				EA3BDCA12A83A98A001C3C6C /* GachaItemMO+CoreDataProperties.swift in Sources */,
 				5B55DD1E2BE9004800CEFDE0 /* GachaItemIcon.swift in Sources */,

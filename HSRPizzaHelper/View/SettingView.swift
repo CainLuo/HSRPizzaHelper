@@ -57,9 +57,6 @@ struct SettingView: View {
                     } label: {
                         Label("sys.label.rate", systemSymbol: .starBubble)
                     }
-                    NavigationLink(value: Navigation.donation) {
-                        Label("sys.label.support", systemSymbol: .giftcard)
-                    }
                     NavigationLink(value: Navigation.contact) {
                         Label("sys.label.contact", systemSymbol: .bubbleLeftAndBubbleRight)
                     }
@@ -84,7 +81,6 @@ struct SettingView: View {
         case widgetSettings
         case notificationSettings
         case uiSettings
-        case donation
         case contact
         case moreSettings
     }
@@ -126,8 +122,6 @@ struct SettingView: View {
                 NotificationSettingView()
             case .uiSettings:
                 DisplayOptionsView()
-            case .donation:
-                GlobalDonateView()
             case .contact:
                 ContactInfoView()
             case .moreSettings:

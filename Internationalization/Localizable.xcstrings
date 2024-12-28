@@ -16851,100 +16851,8 @@
         }
       }
     },
-    "sys.donate.items.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optional Donations"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Donaciones Opcionales"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "寄付アイテム"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пожертвования"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Đóng Góp Tuỳ Chọn"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "捐赠项目"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "捐贈項目"
-          }
-        }
-      }
-    },
-    "sys.donate.notes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Please note that the following content is a free donation, and we will not provide you with any additional services. \nWe promise that your donation to \"Pizza Helper for HSR\" will only be used to cover the direct costs during the App development process, including but not limited to the annual fee of the Apple Developer Program membership, server and domain name expenses, etc. We will not make any profit from this project, the excess will be donated to those in need. Thank you for supporting us."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ten en cuenta que el siguiente contenido es una donación gratuita, y no le proporcionaremos ningún servicio adicional. \nPrometemos que su donación a \"HSR Pizza Helper\" solo se utilizará para cubrir los costos directos durante el proceso de desarrollo de la aplicación, incluidos, entre otros, la tarifa anual de la membresía del Programa de Desarrolladores de Apple, los gastos del servidor, nombre del dominio, etc. No obtendaremos ningún beneficio de este proyecto, el exceso se donará a los necesitados. Gracias por apoyarnos."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "以下のコンテンツは無料の寄付であり、追加のサービスは提供されませんのでご了承ください。 \n「崩スタピザ助手」への寄付は、Apple Developer Program メンバーシップの年会費、サーバーおよびドメイン名の費用などを含むがこれらに限定されない、アプリ開発プロセス中の直接費用をカバーするためにのみ使用されることをお約束します。 このプロジェクトからは一切の利益は得られず、余剰分は困っている人たちに寄付されます。 ご支援いただきありがとうございます。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обратите внимание, что все донаты являются по желанию и вы не получите за них дополнительных инструментов. \nВсе деньги пойдут на разработку приложения, включая, но не ограничиваясь ежегодным платежом в программу разработчиков Apple. Избыточные же пожертвования пойдут в благотворительные фонды Китая. Спасибо вам за поддержку."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xin lưu ý rằng nội dung sau đây là đóng góp miễn phí và chúng tôi sẽ không cung cấp cho bạn bất kỳ dịch vụ bổ sung nào. \nChúng tôi cam kết rằng khoản đóng góp của bạn cho \"HSR Pizza Helper\" sẽ chỉ được sử dụng để trang trải chi phí trực tiếp trong quá trình phát triển Ứng dụng, bao gồm nhưng không giới hạn ở phí hàng năm của tư cách thành viên Chương trình dành cho nhà phát triển Apple, chi phí máy chủ và tên miền, v. v. Chúng tôi sẽ không thu lợi nhuận từ dự án này, phần thừa sẽ được quyên góp cho những người có nhu cầu. Cảm ơn bạn đã ủng hộ chúng tôi."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "请注意，以下内容为无偿捐赠，我们不会为您提供任何额外的服务。\n我们承诺，您对「星铁披萨小助手」的捐赠仅用于覆盖App开发过程中的直接成本，包括但不限于苹果开发者计划会员资格的年费和服务器、域名开支等。我们不会借此项目盈利，多余的部分将会捐助给需要帮助的人。感谢您对我们的支持。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "請注意，以下內容為無償捐贈，我們不會為您提供任何額外的服務。\n我們承諾，您對「星鐵披薩小助手」的捐贈僅用於覆蓋App開發過程中的直接成本，包括但不限於蘋果開發者計劃會員資格（Apple Developer Program）的年費和伺服器、域名開支等。我們不會藉此項目營利，多餘的部分將會捐助給需要幫助的人。感謝您對我們的支援。"
-          }
-        }
-      }
-    },
     "sys.donate.title %@" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17405,52 +17313,6 @@
         }
       }
     },
-    "sys.label.pay" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pay"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pagar"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支払い"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Оплатить"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pay"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支付"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支付"
-          }
-        }
-      }
-    },
     "sys.label.preferredlang" : {
       "localizations" : {
         "en" : {
@@ -17585,52 +17447,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "伺服器"
-          }
-        }
-      }
-    },
-    "sys.label.support" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Support Us"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apóyanos"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開発者に寄付する"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поддержать нас"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hỗ Trợ Chúng Tôi"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支持我们"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支援我們"
           }
         }
       }
