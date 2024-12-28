@@ -31,6 +31,7 @@ struct ManageAccountsView: View {
 
     var body: some View {
         List {
+            MigrationView(sectionOnly: true)
             Section {
                 Button {
                     sheetType = .createNewAccount(Account(context: viewContext))

@@ -26,6 +26,7 @@ struct ToolView: View {
     var body: some View {
         NavigationSplitView {
             List(selection: $navigation) {
+                MigrationView(sectionOnly: true)
                 Section {
                     NavigationLink(value: Navigation.gacha) {
                         Text("app.tool.warp_analysis")

@@ -19,6 +19,7 @@ struct GachaView: View {
 
     var body: some View {
         List {
+            MigrationView(sectionOnly: true)
             Section {
                 NavigationLink("gacha.home.get_gacha_record") {
                     GetGachaRecordView()
