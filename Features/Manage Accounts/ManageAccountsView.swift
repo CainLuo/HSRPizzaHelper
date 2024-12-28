@@ -21,6 +21,14 @@ class AlertToastVariable: ObservableObject {
 struct ManageAccountsView: View {
     // MARK: Internal
 
+    var isShown: Binding<Bool> {
+        .init {
+            sheetType != nil
+        } set: { newValue in
+            if !newValue { sheetType = nil }
+        }
+    }
+
     var body: some View {
         List {
             Section {
@@ -105,14 +113,6 @@ struct ManageAccountsView: View {
         }
         .environmentObject(alertToastVariable)
         .environment(\.editMode, $isEditMode)
-    }
-
-    var isShown: Binding<Bool> {
-        .init {
-            sheetType != nil
-        } set: { newValue in
-            if !newValue { sheetType = nil }
-        }
     }
 
     // MARK: Private

@@ -61,7 +61,7 @@ struct LockscreenTimelineProvider: IntentTimelineProvider, HasDefaultAccount {
         in context: Context,
         completion: @escaping (Timeline<LockscreenEntry>) -> Void
     ) {
-        Task {
+        Task { @MainActor in
             var entries: [Entry] = []
 
             let account: Account? = {

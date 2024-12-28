@@ -102,10 +102,6 @@ struct SettingView: View {
 
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
 
-    private func callMUISettings() {
-        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-    }
-
     @ViewBuilder
     private func navigationDetail(selection: Binding<Navigation?>) -> some View {
         NavigationStack {
@@ -130,6 +126,10 @@ struct SettingView: View {
                 DisplayOptionsView()
             }
         }
+    }
+
+    private func callMUISettings() {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
 }
 

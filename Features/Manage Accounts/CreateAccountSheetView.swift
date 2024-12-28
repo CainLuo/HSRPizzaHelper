@@ -78,6 +78,54 @@ struct CreateAccountSheetView: View {
         }
     }
 
+    @ViewBuilder
+    func menuForManagingHoYoLabAccounts() -> some View {
+        Menu {
+            OtherSettingsView.linksForManagingHoYoLabAccounts
+        } label: {
+            Text("account.login.manageLink.shortened")
+        }
+    }
+
+    @ViewBuilder
+    func pendingView() -> some View {
+        Group {
+            Section {
+                RequireLoginView(unsavedCookie: $account.cookie, unsavedFP: $account.deviceFingerPrint, region: $region)
+            } footer: {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("account.login.manual.1")
+                        NavigationLink {
+                            AccountDetailView(account: account)
+                        } label: {
+                            Text("account.login.manual.2")
+                                .font(.footnote)
+                        }
+                    }
+                    Divider().padding(.vertical)
+                    ExplanationView()
+                }
+            }
+        }
+        .onChange(of: account.cookie) { _ in
+            if account.hasValidCookie {
+                status = .gotCookie
+            }
+        }
+        .interactiveDismissDisabled()
+    }
+
+    @ViewBuilder
+    func gotCookieView() -> some View {
+        ProgressView()
+    }
+
+    @ViewBuilder
+    func gotAccountView() -> some View {
+        EditAccountView(account: account, accountsForSelected: accountsForSelected)
+    }
+
     func saveAccount() {
         guard account.isValid else {
             saveAccountError = .missingFieldError(
@@ -126,54 +174,6 @@ struct CreateAccountSheetView: View {
                 }
             }
         }
-    }
-
-    @ViewBuilder
-    func menuForManagingHoYoLabAccounts() -> some View {
-        Menu {
-            OtherSettingsView.linksForManagingHoYoLabAccounts
-        } label: {
-            Text("account.login.manageLink.shortened")
-        }
-    }
-
-    @ViewBuilder
-    func pendingView() -> some View {
-        Group {
-            Section {
-                RequireLoginView(unsavedCookie: $account.cookie, unsavedFP: $account.deviceFingerPrint, region: $region)
-            } footer: {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("account.login.manual.1")
-                        NavigationLink {
-                            AccountDetailView(account: account)
-                        } label: {
-                            Text("account.login.manual.2")
-                                .font(.footnote)
-                        }
-                    }
-                    Divider().padding(.vertical)
-                    ExplanationView()
-                }
-            }
-        }
-        .onChange(of: account.cookie) { _ in
-            if account.hasValidCookie {
-                status = .gotCookie
-            }
-        }
-        .interactiveDismissDisabled()
-    }
-
-    @ViewBuilder
-    func gotCookieView() -> some View {
-        ProgressView()
-    }
-
-    @ViewBuilder
-    func gotAccountView() -> some View {
-        EditAccountView(account: account, accountsForSelected: accountsForSelected)
     }
 
     // MARK: Private

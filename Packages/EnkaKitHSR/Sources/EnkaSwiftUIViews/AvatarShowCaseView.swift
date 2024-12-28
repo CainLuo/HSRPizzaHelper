@@ -142,14 +142,15 @@ public struct AvatarShowCaseView: View {
 
     @State private var selection: Int = 0
 
-    private let onClose: (() -> Void)?
-
     @State private var showTabViewIndex: Bool = false
 
     @State private var showingCharacterIdentifier: Int
 
     @ObservedObject private var profile: EnkaHSR.ProfileSummarized
     @StateObject private var orientation = DeviceOrientation()
+
+    private let onClose: (() -> Void)?
+
     private let bottomSpacerHeight: CGFloat = 20
 
     private var avatar: EnkaHSR.AvatarSummarized? {

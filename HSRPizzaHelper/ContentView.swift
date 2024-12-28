@@ -17,6 +17,15 @@ import SwiftUI
 struct ContentView: View {
     // MARK: Internal
 
+    var index: Binding<Int> { Binding(
+        get: { selection },
+        set: {
+            selection = $0
+            Defaults[.appTabIndex] = $0
+            UserDefaults.hsrSuite.synchronize()
+        }
+    ) }
+
     var body: some View {
         TabView(selection: index) {
             HomeView()
@@ -63,15 +72,6 @@ struct ContentView: View {
         }
         .initializeApp()
     }
-
-    var index: Binding<Int> { Binding(
-        get: { selection },
-        set: {
-            selection = $0
-            Defaults[.appTabIndex] = $0
-            UserDefaults.hsrSuite.synchronize()
-        }
-    ) }
 
     // MARK: Private
 

@@ -12,7 +12,13 @@ import SwiftUI
 
 struct GIStyleRectangularWidgetView: View {
     @Environment(\.colorScheme) var colorScheme
+
     let entry: GIStyleEntry
+
+    var actualColorScheme: ColorScheme {
+        guard entry.configuration.textColor != .primary else { return colorScheme }
+        return entry.configuration.textColor == .white ? .light : .dark
+    }
 
     var body: some View {
         Group {
@@ -35,11 +41,6 @@ struct GIStyleRectangularWidgetView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .environment(\.colorScheme, actualColorScheme)
-    }
-
-    var actualColorScheme: ColorScheme {
-        guard entry.configuration.textColor != .primary else { return colorScheme }
-        return entry.configuration.textColor == .white ? .light : .dark
     }
 }
 

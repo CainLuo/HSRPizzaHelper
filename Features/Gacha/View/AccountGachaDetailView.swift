@@ -104,17 +104,6 @@ private struct GachaItemDetail: View {
 
     // MARK: Internal
 
-    var body: some View {
-        if !filteredGachaItemsWithDrawCount.isEmpty {
-            ForEach(filteredGachaItemsWithDrawCount, id: \.0.id) { item, drawCount in
-                GachaItemBar(item: item, drawCount: drawCount, showTime: showTime)
-            }
-        } else {
-            Text("gacha.account_detail.detail.no_data")
-                .foregroundColor(.secondary)
-        }
-    }
-
     var filteredGachaItemsWithDrawCount: [(GachaItemMO, Int)] {
         /// 补记：这里已经用 Query Predicate 筛检过了，所以 drawCounts 计算结果无误。
         let drawCounts = calculateGachaItemsDrawCount(gachaItemsResult)
@@ -131,11 +120,23 @@ private struct GachaItemDetail: View {
             }
     }
 
+    var body: some View {
+        if !filteredGachaItemsWithDrawCount.isEmpty {
+            ForEach(filteredGachaItemsWithDrawCount, id: \.0.id) { item, drawCount in
+                GachaItemBar(item: item, drawCount: drawCount, showTime: showTime)
+            }
+        } else {
+            Text("gacha.account_detail.detail.no_data")
+                .foregroundColor(.secondary)
+        }
+    }
+
     // MARK: Private
+
+    @FetchRequest private var gachaItemsResult: FetchedResults<GachaItemMO>
 
     private var showTime: Bool
 
-    @FetchRequest private var gachaItemsResult: FetchedResults<GachaItemMO>
     private let rankFilter: RankFilter
 }
 

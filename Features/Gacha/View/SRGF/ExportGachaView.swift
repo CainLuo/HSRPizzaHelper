@@ -123,8 +123,6 @@ struct ExportGachaView: View {
 
     @State private var isSucceedAlertShown: Bool = false
     @State private var isFailureAlertShown: Bool = false
-    private let compactLayout: Bool
-
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
 
@@ -139,6 +137,8 @@ struct ExportGachaView: View {
     @State private var srgfJson: SRGFv1?
     @State private var uigfJson: UIGFv4?
     @State private var currentFormat: UIGFFormat = .uigfv4
+
+    private let compactLayout: Bool
 
     private var currentDocument: GachaDocument? {
         switch currentFormat {
@@ -192,6 +192,34 @@ struct ExportGachaView: View {
         }
     }
 
+    @ViewBuilder
+    private func accountPicker() -> some View {
+        Picker("app.gacha.account.select.title", selection: $params.uid) {
+            Group {
+                ForEach(accountPickerPairs, id: \.tag) { value, tag in
+                    Text(value).tag(tag)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func postAlertMessage() -> some View {
+        switch alert {
+        case let .succeed(url): Text("gacha.export.fileSavedTo:\(url)")
+        case let .failure(message): Text(verbatim: "⚠︎ \(message)")
+        case nil: EmptyView()
+        }
+    }
+
+    @ViewBuilder
+    private func exportButton() -> some View {
+        Button("app.gacha.data.export.button") {
+            exportButtonClicked(format: currentFormat)
+        }
+        .disabled(params.uid == nil && currentFormat == .srgfv1)
+    }
+
     private func exportButtonClicked(format: UIGFFormat) {
         switch format {
         case .uigfv4:
@@ -233,17 +261,6 @@ struct ExportGachaView: View {
         }
     }
 
-    @ViewBuilder
-    private func accountPicker() -> some View {
-        Picker("app.gacha.account.select.title", selection: $params.uid) {
-            Group {
-                ForEach(accountPickerPairs, id: \.tag) { value, tag in
-                    Text(value).tag(tag)
-                }
-            }
-        }
-    }
-
     private func firstAccount(uid: String) -> Account? {
         accounts.first(where: { $0.uid! == uid })
     }
@@ -255,23 +272,6 @@ struct ExportGachaView: View {
         case let .failure(failure):
             alert = .failure(message: failure.localizedDescription)
         }
-    }
-
-    @ViewBuilder
-    private func postAlertMessage() -> some View {
-        switch alert {
-        case let .succeed(url): Text("gacha.export.fileSavedTo:\(url)")
-        case let .failure(message): Text(verbatim: "⚠︎ \(message)")
-        case nil: EmptyView()
-        }
-    }
-
-    @ViewBuilder
-    private func exportButton() -> some View {
-        Button("app.gacha.data.export.button") {
-            exportButtonClicked(format: currentFormat)
-        }
-        .disabled(params.uid == nil && currentFormat == .srgfv1)
     }
 }
 

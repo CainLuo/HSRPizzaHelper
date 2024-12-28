@@ -14,6 +14,15 @@ public struct CharSpecimen: Identifiable, Hashable {
     public let id: String
 
     @ViewBuilder
+    public func render(size: Double, cutType: IDPhotoView.IconType = .cutShoulder) -> some View {
+        if let first = IDPhotoView(pid: id, size, cutType, forceRender: true) {
+            first
+        } else {
+            IDPhotoFallbackView(pid: id, size, cutType)
+        }
+    }
+
+    @ViewBuilder
     public static func renderAllSpecimen(
         scroll: Bool,
         columns: Int,
@@ -34,15 +43,6 @@ public struct CharSpecimen: Identifiable, Hashable {
             }
         } else {
             inner
-        }
-    }
-
-    @ViewBuilder
-    public func render(size: Double, cutType: IDPhotoView.IconType = .cutShoulder) -> some View {
-        if let first = IDPhotoView(pid: id, size, cutType, forceRender: true) {
-            first
-        } else {
-            IDPhotoFallbackView(pid: id, size, cutType)
         }
     }
 

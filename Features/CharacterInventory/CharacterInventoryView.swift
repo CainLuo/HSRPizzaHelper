@@ -164,14 +164,14 @@ struct CharacterInventoryView: View {
         case star4 = "app.characters.filter.4star"
     }
 
-    private let data: MiHoYoAPI.CharacterInventory
-    private let isMiyousheUID: Bool
-
     @State private var allAvatarListDisplayType: AllAvatarListDisplayType = .all
     @State private var expanded: Bool = false
     @State private var containerSize: CGSize = .init(width: 320, height: 320)
     @StateObject private var orientation = DeviceOrientation()
     @Environment(\.dismiss) private var dismiss
+
+    private let data: MiHoYoAPI.CharacterInventory
+    private let isMiyousheUID: Bool
 
     private var characterStats: LocalizedStringKey {
         let aaa = data.avatarList.count
@@ -329,10 +329,10 @@ struct AvatarListItem: View {
 
     // MARK: Private
 
+    @State private var condensed: Bool
+
     private let avatar: MiHoYoAPI.CharacterInventory.HYAvatar
     private let limited: Bool
-
-    @State private var condensed: Bool
 
     @Default(.useRealCharacterNames) private var useRealName: Bool
 }

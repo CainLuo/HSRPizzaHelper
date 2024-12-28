@@ -381,13 +381,13 @@ private struct AccountHeaderView<T: View>: View {
 
     // MARK: Private
 
-    private let additionalView: () -> T
-
-    private let refreshAction: (() -> Void)?
-
     @Binding private var profile: EnkaHSR.QueryRelated.DetailInfo?
 
     @StateObject private var vmDPV: DetailPortalViewModel = .init()
+
+    private let additionalView: () -> T
+
+    private let refreshAction: (() -> Void)?
 
     private var uidStr: String {
         guard let strUid = guardedProfile?.uid.description else { return "……" }
@@ -518,18 +518,18 @@ private struct PlayerDetailSection: View {
         vmDPV.enkaProfileStatus
     }
 
+    var isUpdating: Bool {
+        switch vmDPV.enkaProfileStatus {
+        case .progress: true
+        default: false
+        }
+    }
+
     @ViewBuilder var currentShowCase: some View {
         if let profile = vmDPV.currentEnkaProfile {
             profile.asView(theDB: vmDPV.enkaDB)
         } else if case let .succeed((profile, _)) = enkaProfileStatus {
             profile.asView(theDB: vmDPV.enkaDB)
-        }
-    }
-
-    var isUpdating: Bool {
-        switch vmDPV.enkaProfileStatus {
-        case .progress: true
-        default: false
         }
     }
 

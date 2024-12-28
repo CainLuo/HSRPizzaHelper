@@ -30,6 +30,6 @@ extension Defaults.Keys {
     )
 }
 
-extension GachaItemMetadata: _DefaultsSerializable {}
+extension GachaItemMetadata: @retroactive _DefaultsSerializable {}
 
 #endif

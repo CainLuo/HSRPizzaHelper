@@ -90,8 +90,9 @@ public struct CaseQuerySection: View {
 
     @State var givenUID: String = ""
 
-    var focused: FocusState<Bool>.Binding?
     @FocusState var backupFocus: Bool
+
+    var focused: FocusState<Bool>.Binding?
 
     var avatarAssetName: String {
         delegate.currentInfo?.accountPhotoFileNameStem(theDB: theDB)
@@ -126,8 +127,9 @@ public struct CaseQuerySection: View {
 
     // MARK: Private
 
-    private var theDB: EnkaHSR.EnkaDB
     @StateObject private var delegate: Coordinator = .init()
+
+    private var theDB: EnkaHSR.EnkaDB
 
     private var isUIDValid: Bool {
         guard let givenUIDInt = Int(givenUID) else { return false }

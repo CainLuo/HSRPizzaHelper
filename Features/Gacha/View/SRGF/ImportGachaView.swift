@@ -474,6 +474,7 @@ private struct PopFileButton: View {
 
 private struct StatusView<V: View>: View {
     @Binding var status: ImportStatus
+
     @ViewBuilder var pendingForImportView: () -> V
 
     var body: some View {
@@ -496,6 +497,7 @@ private struct StatusView<V: View>: View {
 
 private struct FailureView: View {
     @Binding var status: ImportStatus
+
     let errorMessage: String
 
     var body: some View {
@@ -512,6 +514,7 @@ private struct FailureView: View {
 
 private struct SucceedView: View {
     @Binding var status: ImportStatus
+
     let infoMsgs: [ImportSucceedInfo]
 
     var body: some View {

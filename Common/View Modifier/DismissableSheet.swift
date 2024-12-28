@@ -11,6 +11,7 @@ import SwiftUI
 
 struct DismissableSheet<Item>: ViewModifier where Item: Identifiable {
     @Binding var sheet: Item?
+
     var title = "sys.done"
     var todoOnDismiss: () -> Void
 
@@ -46,6 +47,7 @@ extension View {
 
 struct DismissableBoolSheet: ViewModifier {
     @Binding var isSheetShow: Bool
+
     var title: String = "sys.done"
     var todoOnDismiss: () -> Void
 
@@ -129,9 +131,9 @@ struct SheetCaller<D: View, L: View>: View {
 
     @State private var sansFinishButton: Bool
 
+    @State private var isSheetShown = false
+
     @ViewBuilder private let destination: () -> D
 
     @ViewBuilder private let label: () -> L
-
-    @State private var isSheetShown = false
 }

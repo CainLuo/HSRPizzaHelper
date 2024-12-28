@@ -90,14 +90,6 @@ private struct GachaSmallChart: View {
             }
     }
 
-    var body: some View {
-        if fiveStarItems.isEmpty {
-            Text("gacha.account_detail.small_chart.no_data")
-        } else {
-            chart()
-        }
-    }
-
     var colors: [Color] {
         fiveStarItems.map { _, count in
             switch count {
@@ -108,6 +100,14 @@ private struct GachaSmallChart: View {
             default:
                 return .red
             }
+        }
+    }
+
+    var body: some View {
+        if fiveStarItems.isEmpty {
+            Text("gacha.account_detail.small_chart.no_data")
+        } else {
+            chart()
         }
     }
 
@@ -265,10 +265,11 @@ private struct GachaStatisticSectionView: View {
         return fmt
     }()
 
+    @FetchRequest private var gachaItemsResult: FetchedResults<GachaItemMO>
+
     private let gachaType: GachaType
 
     @Default(.useGuestGachaEvaluator) private var useGuestGachaEvaluator: Bool
-    @FetchRequest private var gachaItemsResult: FetchedResults<GachaItemMO>
 
     private var itemsWithDrawCount: [(GachaItemMO, drawCount: Int)] {
         Array(zip(gachaItemsResult, calculateGachaItemsDrawCount(gachaItemsResult)))

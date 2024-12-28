@@ -118,8 +118,9 @@ public struct ShowCaseListView: View {
     // MARK: Internal
 
     @State var showingCharacterIdentifier: Int?
-    @Default(.animateOnCallingCharacterShowcase) var animateOnCallingCharacterShowcase: Bool
     @ObservedObject var profile: EnkaHSR.ProfileSummarized
+
+    @Default(.animateOnCallingCharacterShowcase) var animateOnCallingCharacterShowcase: Bool
 
     @ViewBuilder
     func fullScreenCover(id enkaId: Int) -> some View {

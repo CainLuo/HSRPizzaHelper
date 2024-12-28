@@ -194,17 +194,38 @@ public struct IDPhotoView: View {
 
     @Environment(\.colorScheme) var colorScheme
 
-    var coreBody: some View {
-        switch iconType {
-        case .asCard: return AnyView(cardView)
-        default: return AnyView(circleIconView)
-        }
-    }
-
     var proposedSize: CGSize {
         switch iconType {
         case .asCard: return .init(width: size * 0.74, height: size)
         default: return .init(width: size, height: size)
+        }
+    }
+
+    var elementColor: Color {
+        var opacity: Double = 1
+        switch lifePath {
+        case .abundance: opacity = 0.4
+        case .hunt: opacity = 0.35
+        default: break
+        }
+        return EnkaHSR.Sputnik.sharedDB.characters[pid]?.element.themeColor.suiColor.opacity(opacity) ?? .clear
+    }
+
+    var baseWindowBGColor: Color {
+        switch colorScheme {
+        case .dark:
+            return .init(cgColor: .init(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00))
+        case .light:
+            return .init(cgColor: .init(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00))
+        @unknown default:
+            return .gray
+        }
+    }
+
+    var coreBody: some View {
+        switch iconType {
+        case .asCard: return AnyView(cardView)
+        default: return AnyView(circleIconView)
         }
     }
 
@@ -270,27 +291,6 @@ public struct IDPhotoView: View {
             }
         }
         .background(baseWindowBGColor)
-    }
-
-    var elementColor: Color {
-        var opacity: Double = 1
-        switch lifePath {
-        case .abundance: opacity = 0.4
-        case .hunt: opacity = 0.35
-        default: break
-        }
-        return EnkaHSR.Sputnik.sharedDB.characters[pid]?.element.themeColor.suiColor.opacity(opacity) ?? .clear
-    }
-
-    var baseWindowBGColor: Color {
-        switch colorScheme {
-        case .dark:
-            return .init(cgColor: .init(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00))
-        case .light:
-            return .init(cgColor: .init(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00))
-        @unknown default:
-            return .gray
-        }
     }
 
     // MARK: Private
@@ -366,17 +366,28 @@ struct IDPhotoFallbackView: View {
 
     @Environment(\.colorScheme) var colorScheme
 
-    var coreBody: some View {
-        switch iconType {
-        case .asCard: return AnyView(cardView)
-        default: return AnyView(circleIconView)
-        }
-    }
-
     var proposedSize: CGSize {
         switch iconType {
         case .asCard: return .init(width: size * 0.74, height: size)
         default: return .init(width: size, height: size)
+        }
+    }
+
+    var baseWindowBGColor: Color {
+        switch colorScheme {
+        case .dark:
+            return .init(cgColor: .init(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00))
+        case .light:
+            return .init(cgColor: .init(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00))
+        @unknown default:
+            return .gray
+        }
+    }
+
+    var coreBody: some View {
+        switch iconType {
+        case .asCard: return AnyView(cardView)
+        default: return AnyView(circleIconView)
         }
     }
 
@@ -430,17 +441,6 @@ struct IDPhotoFallbackView: View {
                 .blur(radius: 12)
         }
         .background(baseWindowBGColor)
-    }
-
-    var baseWindowBGColor: Color {
-        switch colorScheme {
-        case .dark:
-            return .init(cgColor: .init(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00))
-        case .light:
-            return .init(cgColor: .init(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00))
-        @unknown default:
-            return .gray
-        }
     }
 
     // MARK: Private

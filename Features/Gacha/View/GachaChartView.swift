@@ -89,12 +89,12 @@ private struct GachaItemChart: View {
 
     private typealias ItemPair = (GachaItemMO, count: Int)
 
+    @FetchRequest private var gachaItemsResult: FetchedResults<GachaItemMO>
+
     @Default(.useGuestGachaEvaluator) private var useGuestGachaEvaluator: Bool
     @Default(.useRealCharacterNames) private var useRealCharacterNames: Bool
 
     private let gachaType: GachaType
-
-    @FetchRequest private var gachaItemsResult: FetchedResults<GachaItemMO>
 
     private var items: [ItemPair] {
         Array(zip(gachaItemsResult, calculateGachaItemsDrawCount(gachaItemsResult)))
@@ -102,10 +102,6 @@ private struct GachaItemChart: View {
 
     private var lose5050IconStr: String {
         useGuestGachaEvaluator ? "UI_EmotionIcon5" : "Pom-Pom_Sticker_32"
-    }
-
-    private func extract5Stars(_ source: [ItemPair]) -> [ItemPair] {
-        source.filter { $0.0.rank == .five }
     }
 
     @ViewBuilder
@@ -146,6 +142,10 @@ private struct GachaItemChart: View {
         .frame(height: CGFloat(givenItems.count * 65))
         .chartForegroundStyleScale(range: colors(items: fiveStarItems))
         .chartLegend(.hidden)
+    }
+
+    private func extract5Stars(_ source: [ItemPair]) -> [ItemPair] {
+        source.filter { $0.0.rank == .five }
     }
 
     private func matchedItems(
