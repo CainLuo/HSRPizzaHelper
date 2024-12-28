@@ -29,6 +29,8 @@ public struct MigrationView: View {
 
     // MARK: Internal
 
+    @Environment(\.colorScheme) var colorScheme
+
     @MainActor @ViewBuilder var coreSection: some View {
         Section {
             NavigationLink {
@@ -58,8 +60,10 @@ public struct MigrationView: View {
             )
             if let attrStr = attrStr {
                 Text(attrStr)
+                    .foregroundStyle(colorScheme == .dark ? .yellow : .red)
             } else {
                 Text(raw)
+                    .foregroundStyle(colorScheme == .dark ? .yellow : .red)
             }
         }
     }
