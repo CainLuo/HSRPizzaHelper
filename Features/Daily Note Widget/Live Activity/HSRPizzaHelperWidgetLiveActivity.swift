@@ -5,7 +5,7 @@
 //  Created by 戴藏龙 on 2023/5/6.
 //
 
-#if canImport(ActivityKit)
+#if canImport(ActivityKit) && !targetEnvironment(macCatalyst)
 
 import ActivityKit
 import SwiftUI

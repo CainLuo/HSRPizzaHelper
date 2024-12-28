@@ -20,7 +20,7 @@ struct HSRPizzaHelperWidgetBundle: WidgetBundle {
         LargeIconStaminaLockscreenWidget()
         TimerStaminaLockscreenWidget()
         StaminaFullTimeLockscreenWidget()
-        #if canImport(ActivityKit)
+        #if canImport(ActivityKit) && !targetEnvironment(macCatalyst)
         if #available(iOSApplicationExtension 16.1, *) {
             DailyNoteCountDownLiveActivity()
         }
