@@ -10205,25 +10205,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Export to UIGF / SRGF file"
+            "value" : "Export Gacha Records to UIGF / SRGF file"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SRGF ファイルとしてデータを書き出す"
+            "value" : "UIGF / SRGF ファイルとしてガチャ履歴データを書き出す"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "导出数据为 UIGF / SRGF 文件"
+            "value" : "导出抽卡数据为 UIGF / SRGF 文件"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將資料匯出為 UIGF / SRGF 檔案"
+            "value" : "將抽卡資料匯出為 UIGF / SRGF 檔案"
           }
         }
       }
